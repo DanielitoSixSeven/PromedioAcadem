@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PromedioAcadem.ViewModels"
+             x:Class="PromedioAcadem.Views.PromedioPage"
+             Title="PromedioPage">
+
+
+    <ContentPage.BindingContext>
+        <vm:PromedioViewModel/>
+    </ContentPage.BindingContext>
+
+
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Entry Placeholder="Calificacion 1" Keyboard="Numeric" Text="{Binding Cal1}"/>
+        <Entry Placeholder="Calificacion 2" Keyboard="Numeric" Text="{Binding Cal2}"/>
+        <Entry Placeholder="Calificacion 3" Keyboard="Numeric" Text="{Binding Cal3}"/>
+        <Button Text="Calcular Promedio" Command="{Binding CalcularCommand}"/>
+        <Label Text="{Binding Promedio}" FontSize="20"/>
+        <Label Text="{Binding Nivel}" FontSize="20"/>
+        <Label Text="{Binding Mensaje}" TextColor="Red"/>
+
+
+
+
+    </VerticalStackLayout>
+    
+    
+</ContentPage>
