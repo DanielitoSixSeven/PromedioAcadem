@@ -20,11 +20,11 @@ namespace PromedioAcadem.ViewModels
 
         public string Cal1 { get => _cal1; set { _cal1 = value; Notificar(); Limpiar();  } }
         public string Cal2 { get => _cal2; set { _cal2 = value; Notificar(); Limpiar(); } }
-        public string Cal3 { get => _cal3; set { _cal2 = value; Notificar(); Limpiar(); } }
+        public string Cal3 { get => _cal3; set { _cal3 = value; Notificar(); Limpiar(); } }
 
         //Salidas
 
-        public string Promedio { get => _promedio; set { _promedio = value; Notificar(); Limpiar(); } }
+        public string Promedio { get => _promedio; set { _promedio = value; Notificar(); } }
         public string Nivel { get => _nivel; set { _nivel = value; Notificar(); } }
 
         public string Mensaje { get => _mensaje; set { _mensaje = value; Notificar(); } }
@@ -61,7 +61,7 @@ namespace PromedioAcadem.ViewModels
         }
         private bool Validar(string texto, out decimal numero)
         {
-            return decimal.TryParse((texto ?? "").Replace('.', '.'),
+            return decimal.TryParse((texto ?? "").Replace('.', ','),
                 NumberStyles.Float, CultureInfo.InvariantCulture, out numero)
                 && numero >= 0 && numero <= 10;
 
